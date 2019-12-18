@@ -50,7 +50,12 @@
         <div class="mt-3">
             @foreach(session('output') as $item)
             <div class="alert alert-success" role="alert">
-                {{$item['symbol']}} : {{$item['count']}} : before: {{$item['before']}} : after: {{$item['after']}}
+                {{$item['symbol']}}
+                <span class="red">:</span>
+                {{$item['count']}}
+                <span class="red">:</span>
+                before: {{$item['before']}} : after: {{$item['after']}}
+                @if ($item['count'] > 1) max-distance: 10 chars @endif
             </div>
             @endforeach
         </div>
